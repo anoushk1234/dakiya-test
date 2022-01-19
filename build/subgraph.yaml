@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Messaging
@@ -17,10 +17,10 @@ dataSources:
         - ThreadCreated
       abis:
         - name: Messaging
-          file: ./abis/Messaging.json
+          file: Messaging/abis/Messaging.json
       eventHandlers:
         - event: MessageSent(address,string,uint256,address,uint256)
           handler: handleMessageSent
         - event: ThreadCreated(address,address,uint256,uint256,string,string,bool)
           handler: handleThreadCreated
-      file: ./src/mapping.ts
+      file: Messaging/Messaging.wasm
