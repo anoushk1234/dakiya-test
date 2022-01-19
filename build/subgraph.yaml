@@ -8,6 +8,7 @@ dataSources:
     source:
       address: "0x355039B35222ea3E5eCbddfa0400BfC78E1ACEEf"
       abi: Messaging
+      startBlock: 9978805
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
