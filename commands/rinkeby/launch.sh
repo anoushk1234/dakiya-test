@@ -1,0 +1,1 @@
+npm run prepare:rinkeby && npm run codegen && npm run build && npm run deploy

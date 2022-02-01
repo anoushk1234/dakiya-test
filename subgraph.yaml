@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: Messaging
-    network: rinkeby
+    network: "mumbai"
     source:
-      address: "0x355039B35222ea3E5eCbddfa0400BfC78E1ACEEf"
+      address: "0xA694Be92181e228738470Ea50C2C7f8FBbc77C62"
       abi: Messaging
-      startBlock: 9978805
+      startBlock: 24482276
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5

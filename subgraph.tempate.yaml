@@ -1,14 +1,14 @@
 specVersion: 0.0.2
 schema:
-  file: schema.graphql
+  file: ./schema.graphql
 dataSources:
   - kind: ethereum
     name: Messaging
-    network: mumbai
+    network: "{{network}}"
     source:
-      address: "0xA694Be92181e228738470Ea50C2C7f8FBbc77C62"
+      address: "{{address}}"
       abi: Messaging
-      startBlock: 24482276
+      startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -18,10 +18,10 @@ dataSources:
         - ThreadCreated
       abis:
         - name: Messaging
-          file: Messaging/abis/Messaging.json
+          file: ./abis/Messaging.json
       eventHandlers:
         - event: MessageSent(address,string,uint256,address,uint256)
           handler: handleMessageSent
         - event: ThreadCreated(address,address,uint256,uint256,string,string,bool)
           handler: handleThreadCreated
-      file: Messaging/Messaging.wasm
+      file: ./src/mapping.ts

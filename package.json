@@ -7,10 +7,15 @@
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ anoushk1234/dakiya-rinkeby",
     "create-local": "graph create --node http://localhost:8020/ anoushk1234/dakiya-rinkeby",
     "remove-local": "graph remove --node http://localhost:8020/ anoushk1234/dakiya-rinkeby",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 anoushk1234/dakiya-rinkeby"
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 anoushk1234/dakiya-rinkeby",
+    "prepare:mumbai": "mustache config/mumbai.json subgraph.tempate.yaml > subgraph.yaml",
+    "deploy:mumbai": "npm run prepare:mumbai && graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ anoushk1234/dakiya-rinkeby",
+    "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
+    "deploy:rinkeby": "npm run prepare:rinkeby && graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ anoushk1234/dakiya-rinkeby"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.25.1",
-    "@graphprotocol/graph-ts": "0.24.1"
+    "@graphprotocol/graph-ts": "0.24.1",
+    "mustache": "^4.2.0"
   }
 }
